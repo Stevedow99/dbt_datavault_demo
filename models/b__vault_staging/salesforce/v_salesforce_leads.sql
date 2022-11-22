@@ -10,6 +10,7 @@ derived_columns:
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
   LEAD_PK_HASH: "LEADID"
+  CONTACT_PK_HASH: "CONTACTID"
   LEAD_HASHDIFF:
     is_hashdiff: true
     columns:
