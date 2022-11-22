@@ -10,9 +10,11 @@ derived_columns:
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
   CONTACT_PK_HASH: "CONTACTID"
+  ACCOUNT_PK_HASH: "ACCOUNTID"
   CONTACT_HASHDIFF:
     is_hashdiff: true
     columns:
+      - "ACCOUNTID"
       - "CONTACTID"
       - "FIRST_NAME"
       - "LAST_NAME"
