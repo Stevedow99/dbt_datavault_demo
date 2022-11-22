@@ -1,22 +1,25 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: stg_salesforce_accounts
+source_model: stg_salesforce_leads
 derived_columns:
-  RECORD_SOURCE: "!SALESFORCE-ACCOUNTS"
+  RECORD_SOURCE: "!SALESFORCE-LEADS"
   LOAD_DATETIME: "DATECREATED"
   EFFECTIVE_FROM: "MODIFIEDDATE"
   START_DATE: "MODIFIEDDATE"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  ACCOUNT_PK_HASH: "ACCOUNTID"
-  ACCOUNT_HASHDIFF:
+  LEAD_PK_HASH: "LEADID"
+  LEAD_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ACCOUNTID"
-      - "COMPANY_NAME"
-      - "CITY"
-      - "STATE"
+      - "LEADID"
+      - "FIRST_NAME"
+      - "LAST_NAME"
+      - "EMAIL"
+      - "COMPANY"
+      - "LEAD_STATUS"
+
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
