@@ -13,7 +13,7 @@ renamed as (
         company_name,
         city,
         state,
-        datecreated
+        datecreated,
         modifieddate
 
     from source
