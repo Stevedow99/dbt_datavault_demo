@@ -1,8 +1,14 @@
 {% docs __overview__ %}
 
-# docs
-- go
-- here
-![alt text](https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80)
+# This is a simple demo of using the dbtvault package and dbt Cloud!
+
+### This demo leverages dummy salesforce data to create the following
+    - Vault Staging Tables
+    - Vault Hubs
+    - Vault Links
+    - Vault Satelites
+
+### A diagram of the vault assets created:
+![dbtvault demo diagram](https://github.com/Stevedow99/dbt_datavault_demo/blob/c369942c59283622e57969f70d61ddd0507a2651/assets/dbt_vault_img.png?raw=true)
  
 {% enddocs %}
