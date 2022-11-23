@@ -3,7 +3,7 @@
 # This is a simple demo of using the dbtvault package and dbt Cloud!
 
 ### This demo leverages dummy salesforce data to create the following
-    - Vault staging tables
+    - Vault Staging Tables
     - Vault Hubs
     - Vault Links
     - Vault Satelites
