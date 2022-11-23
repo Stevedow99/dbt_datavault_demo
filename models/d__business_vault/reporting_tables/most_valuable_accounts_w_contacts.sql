@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select
     company_name,
     concat_ws(' ', first_name, last_name) as contact_full_name,
