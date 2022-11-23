@@ -1,6 +1,6 @@
 {% docs __overview__ %}
 
-# This is a simple demo of using the dbtvault package and dbt Cloud!
+# This is a simple demo of using the [dbtvault](https://hub.getdbt.com/datavault-uk/dbtvault/latest/) package and dbt Cloud!
 
 ### This demo leverages dummy salesforce data to create the following
     - Vault Staging Tables
