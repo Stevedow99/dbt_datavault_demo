@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select
     state,
     sum(amount) as opportunity_amount
