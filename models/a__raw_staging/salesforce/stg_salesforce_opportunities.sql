@@ -12,7 +12,7 @@ renamed as (
         batchid,
         oppurtunityid as oppurtunityid,
         companextid as accountid,
-        amount,
+        TO_DECIMAL(REPLACE(REPLACE(amount,'$',''),',',''),9,2) as amount,
         project_name,
         oppurtunity_name,
         stage,
