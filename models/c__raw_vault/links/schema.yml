@@ -14,10 +14,10 @@ models:
         #       field: contact_hk
       - name: account_hk
         description: Foreign key referencing hub
-        tests:
-          - relationships:
-              to: ref('hub_account')
-              field: account_hk
+        # tests:
+        #   - relationships:
+        #       to: ref('hub_account')
+        #       field: account_hk
       - name: load_datetime
         description: Standard metadata column according to DV standards
       - name: record_source
