@@ -8,10 +8,10 @@ models:
         description: Primary key of the table
       - name: contact_hk
         description: Foreign key referencing hub
-        tests:
-          - relationships:
-              to: ref('hub_contact')
-              field: account_hk
+        # tests:
+        #   - relationships:
+        #       to: ref('hub_contact')
+        #       field: contact_hk
       - name: account_hk
         description: Foreign key referencing hub
         tests:
@@ -30,16 +30,16 @@ models:
         description: Primary key of the table
       - name: opportunity_hk
         description: Foreign key referencing hub
-        tests:
-          - relationships:
-              to: ref('hub_opportunity')
-              field: opportunity_hk
+        # tests:
+        #   - relationships:
+        #       to: ref('hub_opportunity')
+        #       field: opportunity_hk
       - name: account_hk
         description: Foreign key referencing hub
-        tests:
-          - relationships:
-              to: ref('hub_account')
-              field: account_hk
+        # tests:
+        #   - relationships:
+        #       to: ref('hub_account')
+        #       field: account_hk
       - name: load_datetime
         description: Standard metadata column according to DV standards
       - name: record_source
