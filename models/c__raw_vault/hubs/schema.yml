@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: hub_account
+    description: Hub table for Account entity
+    columns:
+      - name: account_hk
+        description: Hash representation of the business key
+        tests:
+          - relationships:
+              to: ref('sat_account')
+              field: account_hk
+      - name: accountid
+        description: Business key in raw format
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
+
+  - name: hub_contact
+    description: Hub table for Contact entity
+    columns:
+      - name: contact_hk
+        description: Hash representation of the business key
+        tests:
+          - relationships:
+              to: ref('sat_contact')
+              field: contact_hk
+      - name: contactid
+        description: Business key in raw format
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
+      
+  - name: hub_opportunity
+    description: Hub table for Opportunity entity
+    columns:
+      - name: opportunity_hk
+        description: Hash representation of the business key
+        tests:
+          - relationships:
+              to: ref('sat_opportunity')
+              field: opportunity_hk
+      - name: oppurtunityid
+        description: Business key in raw format
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
