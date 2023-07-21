@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: sat_account_details
+    description: Satellite table containing descriptive attributes for Account entity coming from Salesforce source system
+    columns:
+      - name: account_hk
+        description: Hash representation of the business key
+        tests:
+          - relationships:
+              to: ref('hub_account')
+              field: account_hk
+      - name: hashdiff
+        description: Hash representation of payload columns
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
+
+  - name: sat_contact_details
+    description: Satellite table containing descriptive attributes for Contact entity coming from Salesforce source system
+    columns:
+      - name: contact_hk
+        description: Hash representation of the business key
+        tests:
+          - relationships:
+              to: ref('hub_contact')
+              field: contact_hk
+      - name: hashdiff
+        description: Hash representation of payload columns
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
+
+  - name: sat_opportunity_details
+    description: Satellite table containing descriptive attributes for Opportunity entity coming from Salesforce source system
+    columns:
+      - name: opportunity_hk
+        tests:
+          - relationships:
+              to: ref('hub_opportunity')
+              field: opportunity_hk
+        description: Hash representation of the business key
+      - name: hashdiff
+        description: Hash representation of payload columns
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
+
+  - name: sat_lead_details
+    description: Satellite table containing descriptive attributes for Lead entity coming from Salesforce source system
+    columns:
+      - name: lead_hk
+        tests:
+          - relationships:
+              to: ref('hub_lead')
+              field: lead_hk
+        description: Hash representation of the business key
+      - name: hashdiff
+        description: Hash representation of payload columns
+      - name: load_datetime
+        description: Standard metadata column according to DV standards
+      - name: record_source
+        description: Standard metadata column according to DV standards
