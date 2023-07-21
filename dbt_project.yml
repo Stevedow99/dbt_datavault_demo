@@ -43,15 +43,8 @@ models:
       +docs:
         node_color: "#ed217c"
     c__raw_vault:
-      hubs:
-        +docs:
-          node_color: "#49beaa"
-      links:
-        +docs:
-          node_color: "#8593ff"
-      satellites:
-        +docs:
-          node_color: "#ef767a"
+      +docs:
+        node_color: "#ff9b71"
     d__business_vault:
       +docs:
         node_color: "#8593ff"
