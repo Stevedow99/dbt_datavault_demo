@@ -1,5 +1,6 @@
+with 
 
-with source as (
+source as (
 
     select * from {{ source('salesforce', 'leads') }}
 
@@ -8,17 +9,24 @@ with source as (
 renamed as (
 
     select
-    
-        batchid,
-        leadid,
-        contactid,
+        id,
+        contact_id,
         first_name,
         last_name,
-        email,
         company,
-        lead_status,
-        datecreated,
-        modifieddate
+        email,
+        status,
+        source,
+        created_date,
+        phone,
+        description,
+        industry,
+        street,
+        city,
+        state,
+        postal_code,
+        country,
+        _fivetran_synced
 
     from source
 

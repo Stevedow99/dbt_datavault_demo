@@ -5,17 +5,21 @@ sources:
   - name: salesforce
     description: sample salesforce data
     database: steve_d_raw_data
-    schema: sample_salesforce_data
+    schema: sample_new_salesforce_data
     tables:
       - name: accounts
+        identifier: sample_account
         description: all company accounts
           
       - name: contacts
+        identifier: sample_contact
         description: all company contacts
 
       - name: leads
+        identifier: sample_lead
         description: company leads
 
       - name: opportunites
+        identifier: sample_opportunity
         description: company opportunites
         
