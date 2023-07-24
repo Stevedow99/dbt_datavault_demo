@@ -6,18 +6,16 @@ SELECT
     lhs.contact_pk_hash,
     lhs.opportunity_id,
     ad.company_name,
-    ad.city,
-    ad.state,
+    ad.billing_city as city,
+    ad.billing_state as state,
     od.amount,
-    od.project_name,
     od.opportunity_name,
-    od.stage,
+    od.stage_name as stage,
     od.close_date,
     cd.contact_id,
     cd.first_name,
     cd.last_name,
-    cd.email,
-    cd.country
+    cd.email
 FROM {{ ref('opportunities_accounts_contacts_linker') }} lhs 
     LEFT JOIN {{ ref('sat_opportunity_details') }} od 
         on lhs.OPPORTUNITY_PK_HASH = od.OPPORTUNITY_PK_HASH

@@ -19,11 +19,12 @@ hashed_columns:
     columns:
       - "OPPORTUNITY_ID"
       - "ACCOUNT_ID"
-      - "NAME"
+      - "OPPORTUNITY_NAME"
       - "DESCRIPTION"
       - "STAGE_NAME"
       - "AMOUNT"
       - "PROBABILITY"
+      - "CLOSE_DATE"
 
 {%- endset -%}
 

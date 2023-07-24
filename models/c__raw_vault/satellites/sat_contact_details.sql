@@ -8,6 +8,7 @@ src_hashdiff:
   source_column: "CONTACT_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "CONTACT_ID"
     - "FIRST_NAME"
     - "LAST_NAME"
     - "EMAIL"

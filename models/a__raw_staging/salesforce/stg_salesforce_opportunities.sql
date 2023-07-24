@@ -13,7 +13,7 @@ renamed as (
         is_deleted,
         account_id,
         is_private,
-        name,
+        name as opportunity_name,
         description,
         stage_name,
         amount,

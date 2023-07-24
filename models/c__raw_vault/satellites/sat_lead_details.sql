@@ -8,6 +8,7 @@ src_hashdiff:
   source_column: "LEAD_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "LEAD_ID"
     - "FIRST_NAME"
     - "LAST_NAME"
     - "COMPANY"

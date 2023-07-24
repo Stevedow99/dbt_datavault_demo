@@ -8,6 +8,7 @@ src_hashdiff:
   source_column: "ACCOUNT_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "ACCOUNT_ID"
     - "COMPANY_NAME"
     - "TYPE"
     - "BILLING_STREET"
