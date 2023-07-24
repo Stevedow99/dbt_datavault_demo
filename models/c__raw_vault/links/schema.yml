@@ -4,14 +4,19 @@ models:
   - name: link_contact_account
     description: Link table containing relationship between Contact and Account entities
     columns:
+      - name: contact_account_pk
+        description: Primary key of the table
+        tests:
+          - not_null
+          - unique
       - name: contact_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub contact
         tests:
           - relationships:
               to: ref('hub_contact')
               field: contact_pk_hash
       - name: account_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub account
         tests:
           - relationships:
               to: ref('hub_account')
@@ -24,14 +29,19 @@ models:
   - name: link_opportunity_account
     description: Link table containing relationship between Opportunity and Account entities
     columns:
+      - name: opportunity_account_pk
+        description: Primary key of the table
+        tests:
+          - not_null
+          - unique
       - name: opportunity_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub opportunity
         tests:
           - relationships:
               to: ref('hub_opportunity')
               field: opportunity_pk_hash
       - name: account_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub account
         tests:
           - relationships:
               to: ref('hub_account')
@@ -44,14 +54,19 @@ models:
   - name: link_lead_contact
     description: Link table containing relationship between Lead and Contact entities
     columns:
+      - name: lead_contact_pk
+        description: Primary key of the table
+        tests:
+          - not_null
+          - unique
       - name: lead_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub lead
         tests:
           - relationships:
               to: ref('hub_lead')
-              field: opportunity_pk_hash
+              field: lead_pk_hash
       - name: contact_pk_hash
-        description: Foreign key referencing hub
+        description: Foreign key referencing hub contact
         tests:
           - relationships:
               to: ref('hub_contact')
