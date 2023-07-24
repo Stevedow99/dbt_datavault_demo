@@ -8,17 +8,23 @@ src_hashdiff:
   source_column: "ACCOUNT_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "ACCOUNT_ID"
     - "COMPANY_NAME"
-    - "CITY"
-    - "STATE"
-src_eff: "MODIFIEDDATE"
-src_ldts: "DATECREATED"
+    - "TYPE"
+    - "BILLING_STREET"
+    - "BILLING_CITY"
+    - "BILLING_STATE"
+    - "BILLING_POSTAL_CODE"
+    - "BILLING_COUNTRY"
+    - "INDUSTRY"
+src_eff: "MODIFIED_DATETIMESTAMP"
+src_ldts: "CREATED_DATETIMESTAMP"
 src_source: "RECORD_SOURCE"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
-{{ dbtvault.sat(src_pk=metadata_dict["src_pk"],
+{{ automate_dv.sat(src_pk=metadata_dict["src_pk"],
                 src_hashdiff=metadata_dict["src_hashdiff"],
                 src_payload=metadata_dict["src_payload"],
                 src_eff=metadata_dict["src_eff"],

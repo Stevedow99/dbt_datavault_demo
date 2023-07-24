@@ -1,26 +1,24 @@
 with linked_hubs_w_details as (
 
 SELECT
-    lhs.oppurtunity_pk_hash,
+    lhs.opportunity_pk_hash,
     lhs.account_pk_hash,
     lhs.contact_pk_hash,
-    lhs.oppurtunityid,
+    lhs.opportunity_id,
     ad.company_name,
-    ad.city,
-    ad.state,
+    ad.billing_city as city,
+    ad.billing_state as state,
     od.amount,
-    od.project_name,
-    od.oppurtunity_name,
-    od.stage,
+    od.opportunity_name,
+    od.stage_name as stage,
     od.close_date,
-    cd.contactid,
+    cd.contact_id,
     cd.first_name,
     cd.last_name,
-    cd.email,
-    cd.country
+    cd.email
 FROM {{ ref('opportunities_accounts_contacts_linker') }} lhs 
     LEFT JOIN {{ ref('sat_opportunity_details') }} od 
-        on lhs.OPPURTUNITY_PK_HASH = od.OPPURTUNITY_PK_HASH
+        on lhs.OPPORTUNITY_PK_HASH = od.OPPORTUNITY_PK_HASH
     LEFT JOIN {{ ref('sat_contact_details') }} cd
         on lhs.CONTACT_PK_HASH = cd.CONTACT_PK_HASH
     LEFT JOIN {{ ref('sat_account_details') }} ad

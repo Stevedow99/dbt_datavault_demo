@@ -4,28 +4,31 @@
 source_model: stg_salesforce_contacts
 derived_columns:
   RECORD_SOURCE: "!SALESFORCE-CONTACTS"
-  LOAD_DATETIME: "DATECREATED"
-  EFFECTIVE_FROM: "MODIFIEDDATE"
-  START_DATE: "MODIFIEDDATE"
+  LOAD_DATETIME: "CREATED_DATETIMESTAMP"
+  EFFECTIVE_FROM: "MODIFIED_DATETIMESTAMP"
+  START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  CONTACT_PK_HASH: "CONTACTID"
-  ACCOUNT_PK_HASH: "ACCOUNTID"
+  CONTACT_PK_HASH: "CONTACT_ID"
+  ACCOUNT_PK_HASH: "ACCOUNT_ID"
+  CONTACT_ACCOUNT_PK:
+    - "CONTACT_ID"
+    - "ACCOUNT_ID"
   CONTACT_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ACCOUNTID"
-      - "CONTACTID"
+      - "CONTACT_ID"
+      - "ACCOUNT_ID"
       - "FIRST_NAME"
       - "LAST_NAME"
       - "EMAIL"
-      - "COUNTRY"
+      - "TITLE"
 
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
-{{ dbtvault.stage(include_source_columns=true,
+{{ automate_dv.stage(include_source_columns=true,
                   source_model=metadata_dict['source_model'],
                   derived_columns=metadata_dict['derived_columns'],
                   null_columns=none,

@@ -4,28 +4,33 @@
 source_model: stg_salesforce_opportunities
 derived_columns:
   RECORD_SOURCE: "!SALESFORCE-OPPORTUNITIES"
-  LOAD_DATETIME: "DATECREATED"
-  EFFECTIVE_FROM: "MODIFIEDDATE"
-  START_DATE: "MODIFIEDDATE"
+  LOAD_DATETIME: "CREATED_DATETIMESTAMP"
+  EFFECTIVE_FROM: "MODIFIED_DATETIMESTAMP"
+  START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  OPPURTUNITY_PK_HASH: "OPPURTUNITYID"
-  ACCOUNT_PK_HASH: "ACCOUNTID"
-  OPPURTUNITY_HASHDIFF:
+  OPPORTUNITY_PK_HASH: "OPPORTUNITY_ID"
+  ACCOUNT_PK_HASH: "ACCOUNT_ID"
+  OPPORTUNITY_ACCOUNT_PK:
+    - "OPPORTUNITY_ID"
+    - "ACCOUNT_ID"
+  OPPORTUNITY_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ACCOUNTID"
+      - "OPPORTUNITY_ID"
+      - "ACCOUNT_ID"
+      - "OPPORTUNITY_NAME"
+      - "DESCRIPTION"
+      - "STAGE_NAME"
       - "AMOUNT"
-      - "PROJECT_NAME"
-      - "OPPURTUNITY_NAME"
-      - "STAGE"
+      - "PROBABILITY"
       - "CLOSE_DATE"
 
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
-{{ dbtvault.stage(include_source_columns=true,
+{{ automate_dv.stage(include_source_columns=true,
                   source_model=metadata_dict['source_model'],
                   derived_columns=metadata_dict['derived_columns'],
                   null_columns=none,

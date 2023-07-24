@@ -4,20 +4,23 @@ models:
   - name: link_contact_account
     description: Link table containing relationship between Contact and Account entities
     columns:
-      - name: contact_account_hk
+      - name: contact_account_pk
         description: Primary key of the table
-      - name: contact_hk
-        description: Foreign key referencing hub
+        tests:
+          - not_null
+          - unique
+      - name: contact_pk_hash
+        description: Foreign key referencing hub contact
         tests:
           - relationships:
               to: ref('hub_contact')
-              field: contact_hk
-      - name: account_hk
-        description: Foreign key referencing hub
+              field: contact_pk_hash
+      - name: account_pk_hash
+        description: Foreign key referencing hub account
         tests:
           - relationships:
               to: ref('hub_account')
-              field: account_hk
+              field: account_pk_hash
       - name: load_datetime
         description: Standard metadata column according to DV standards
       - name: record_source
@@ -26,20 +29,23 @@ models:
   - name: link_opportunity_account
     description: Link table containing relationship between Opportunity and Account entities
     columns:
-      - name: opportunity_account_hk
+      - name: opportunity_account_pk
         description: Primary key of the table
-      - name: opportunity_hk
-        description: Foreign key referencing hub
+        tests:
+          - not_null
+          - unique
+      - name: opportunity_pk_hash
+        description: Foreign key referencing hub opportunity
         tests:
           - relationships:
               to: ref('hub_opportunity')
-              field: opportunity_hk
-      - name: account_hk
-        description: Foreign key referencing hub
+              field: opportunity_pk_hash
+      - name: account_pk_hash
+        description: Foreign key referencing hub account
         tests:
           - relationships:
               to: ref('hub_account')
-              field: account_hk
+              field: account_pk_hash
       - name: load_datetime
         description: Standard metadata column according to DV standards
       - name: record_source
@@ -48,20 +54,23 @@ models:
   - name: link_lead_contact
     description: Link table containing relationship between Lead and Contact entities
     columns:
-      - name: lead_contact_hk
+      - name: lead_contact_pk
         description: Primary key of the table
-      - name: lead_hk
-        description: Foreign key referencing hub
+        tests:
+          - not_null
+          - unique
+      - name: lead_pk_hash
+        description: Foreign key referencing hub lead
         tests:
           - relationships:
               to: ref('hub_lead')
-              field: opportunity_hk
-      - name: contact_hk
-        description: Foreign key referencing hub
+              field: lead_pk_hash
+      - name: contact_pk_hash
+        description: Foreign key referencing hub contact
         tests:
           - relationships:
               to: ref('hub_contact')
-              field: contact_hk
+              field: contact_pk_hash
       - name: load_datetime
         description: Standard metadata column according to DV standards
       - name: record_source

@@ -3,24 +3,26 @@
 
 {%- set yaml_metadata -%}
 source_model: "v_salesforce_opportunities"
-src_pk: "OPPURTUNITY_PK_HASH"
+src_pk: "OPPORTUNITY_PK_HASH"
 src_hashdiff: 
-  source_column: "OPPURTUNITY_HASHDIFF"
+  source_column: "OPPORTUNITY_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "OPPORTUNITY_ID"
+    - "OPPORTUNITY_NAME"
+    - "DESCRIPTION"
+    - "STAGE_NAME"
     - "AMOUNT"
-    - "PROJECT_NAME"
-    - "OPPURTUNITY_NAME"
-    - "STAGE"
+    - "PROBABILITY"
     - "CLOSE_DATE"
-src_eff: "MODIFIEDDATE"
-src_ldts: "DATECREATED"
+src_eff: "MODIFIED_DATETIMESTAMP"
+src_ldts: "CREATED_DATETIMESTAMP"
 src_source: "RECORD_SOURCE"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
-{{ dbtvault.sat(src_pk=metadata_dict["src_pk"],
+{{ automate_dv.sat(src_pk=metadata_dict["src_pk"],
                 src_hashdiff=metadata_dict["src_hashdiff"],
                 src_payload=metadata_dict["src_payload"],
                 src_eff=metadata_dict["src_eff"],
