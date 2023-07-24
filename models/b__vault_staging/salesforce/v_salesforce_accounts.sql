@@ -4,19 +4,24 @@
 source_model: stg_salesforce_accounts
 derived_columns:
   RECORD_SOURCE: "!SALESFORCE-ACCOUNTS"
-  LOAD_DATETIME: "DATECREATED"
-  EFFECTIVE_FROM: "MODIFIEDDATE"
-  START_DATE: "MODIFIEDDATE"
+  LOAD_DATETIME: "CREATED_DATETIMESTAMP"
+  EFFECTIVE_FROM: "MODIFIED_DATETIMESTAMP"
+  START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  ACCOUNT_PK_HASH: "ACCOUNTID"
+  ACCOUNT_PK_HASH: "ID"
   ACCOUNT_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ACCOUNTID"
-      - "COMPANY_NAME"
-      - "CITY"
-      - "STATE"
+      - "ID"
+      - "TYPE"
+      - "BILLING_STREET"
+      - "BILLING_CITY"
+      - "BILLING_STATE"
+      - "BILLING_POSTAL_CODE"
+      - "BILLING_COUNTRY"
+      - "INDUSTRY"
+      - "EFFECTIVE_FROM"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

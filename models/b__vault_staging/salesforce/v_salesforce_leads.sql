@@ -4,22 +4,26 @@
 source_model: stg_salesforce_leads
 derived_columns:
   RECORD_SOURCE: "!SALESFORCE-LEADS"
-  LOAD_DATETIME: "DATECREATED"
-  EFFECTIVE_FROM: "MODIFIEDDATE"
-  START_DATE: "MODIFIEDDATE"
+  LOAD_DATETIME: "CREATED_DATETIMESTAMP"
+  EFFECTIVE_FROM: "MODIFIED_DATETIMESTAMP"
+  START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  LEAD_PK_HASH: "LEADID"
-  CONTACT_PK_HASH: "CONTACTID"
+  LEAD_PK_HASH: "ID"
+  CONTACT_PK_HASH: "CONTACT_ID"
+  LEAD_CONTACT_PK:
+    - "ID"
+    - "CONTACT_ID"
   LEAD_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "LEADID"
+      - "ID"
+      - "CONTACT_ID"
       - "FIRST_NAME"
       - "LAST_NAME"
-      - "EMAIL"
       - "COMPANY"
-      - "LEAD_STATUS"
+      - "STATUS"
+      - "SOURCE"
 
 {%- endset -%}
 

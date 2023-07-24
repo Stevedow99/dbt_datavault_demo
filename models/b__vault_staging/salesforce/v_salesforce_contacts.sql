@@ -4,22 +4,25 @@
 source_model: stg_salesforce_contacts
 derived_columns:
   RECORD_SOURCE: "!SALESFORCE-CONTACTS"
-  LOAD_DATETIME: "DATECREATED"
-  EFFECTIVE_FROM: "MODIFIEDDATE"
-  START_DATE: "MODIFIEDDATE"
+  LOAD_DATETIME: "CREATED_DATETIMESTAMP"
+  EFFECTIVE_FROM: "MODIFIED_DATETIMESTAMP"
+  START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  CONTACT_PK_HASH: "CONTACTID"
-  ACCOUNT_PK_HASH: "ACCOUNTID"
+  CONTACT_PK_HASH: "ID"
+  ACCOUNT_PK_HASH: "ACCOUNT_ID"
+  CONTACT_ACCOUNT_PK:
+    - "ID"
+    - "ACCOUNT_ID"
   CONTACT_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ACCOUNTID"
-      - "CONTACTID"
+      - "ID"
+      - "ACCOUNT_ID"
       - "FIRST_NAME"
       - "LAST_NAME"
       - "EMAIL"
-      - "COUNTRY"
+      - "TITLE"
 
 {%- endset -%}
 
