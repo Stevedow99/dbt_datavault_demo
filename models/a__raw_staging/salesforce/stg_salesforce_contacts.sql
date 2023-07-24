@@ -68,8 +68,9 @@ renamed as (
         individual_id,
         level_c,
         languages_c,
-        _fivetran_deleted,
-        _fivetran_synced
+        deleted_datetimestamp,
+        created_datetimestamp,
+        modified_datetimestamp
 
     from source
 

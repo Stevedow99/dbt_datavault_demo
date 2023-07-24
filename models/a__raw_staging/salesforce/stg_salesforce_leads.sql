@@ -26,7 +26,9 @@ renamed as (
         state,
         postal_code,
         country,
-        _fivetran_synced
+        deleted_datetimestamp,
+        created_datetimestamp,
+        modified_datetimestamp
 
     from source
 
