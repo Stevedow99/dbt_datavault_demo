@@ -9,6 +9,6 @@
     - Vault Satelites
 
 ### A diagram of the vault assets created:
-![dbtvault demo diagram](https://github.com/Stevedow99/dbt_datavault_demo/blob/c369942c59283622e57969f70d61ddd0507a2651/assets/dbt_vault_img.png?raw=true)
+![dbtvault demo diagram](https://github.com/Stevedow99/dbt_datavault_demo/blob/50f6dd44227a14f71817c18679cd3ca11bff90a6/assets/dbt_vault_img.png?raw=true)
  
 {% enddocs %}
