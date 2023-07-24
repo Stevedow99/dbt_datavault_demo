@@ -73,8 +73,9 @@ renamed as (
         upsell_opportunity_c,
         slaserial_number_c,
         slaexpiration_date_c,
-        _fivetran_deleted,
-        _fivetran_synced
+        deleted_datetimestamp,
+        created_datetimestamp,
+        modified_datetimestamp
 
     from source
 

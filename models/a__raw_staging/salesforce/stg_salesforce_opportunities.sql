@@ -55,8 +55,9 @@ renamed as (
         order_number_c,
         current_generators_c,
         main_competitors_c,
-        _fivetran_deleted,
-        _fivetran_synced
+        deleted_datetimestamp,
+        created_datetimestamp,
+        modified_datetimestamp
 
     from source
 
