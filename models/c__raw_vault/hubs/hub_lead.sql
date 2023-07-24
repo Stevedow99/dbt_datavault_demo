@@ -4,7 +4,7 @@
 {%- set source_model = ["v_salesforce_leads"]   -%}
 
 {%- set src_pk = "LEAD_PK_HASH"                -%}
-{%- set src_nk = "ID"                -%}
+{%- set src_nk = "LEAD_ID"                -%}
 {%- set src_ldts = "LOAD_DATETIME"            -%}
 {%- set src_source = "RECORD_SOURCE"          -%}
 

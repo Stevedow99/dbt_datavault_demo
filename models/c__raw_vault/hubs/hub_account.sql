@@ -4,7 +4,7 @@
 {%- set source_model = ["v_salesforce_accounts"]   -%}
 
 {%- set src_pk = "ACCOUNT_PK_HASH"                -%}
-{%- set src_nk = "ID"                -%}
+{%- set src_nk = "ACCOUNT_ID"                -%}
 {%- set src_ldts = "LOAD_DATETIME"            -%}
 {%- set src_source = "RECORD_SOURCE"          -%}
 

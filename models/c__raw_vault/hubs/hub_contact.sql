@@ -4,7 +4,7 @@
 {%- set source_model = ["v_salesforce_contacts"]   -%}
 
 {%- set src_pk = "CONTACT_PK_HASH"                -%}
-{%- set src_nk = "ID"                -%}
+{%- set src_nk = "CONTACT_ID"                -%}
 {%- set src_ldts = "LOAD_DATETIME"            -%}
 {%- set src_source = "RECORD_SOURCE"          -%}
 
