@@ -3,9 +3,9 @@
 
 {%- set yaml_metadata -%}
 source_model: "v_salesforce_opportunities"
-src_pk: "OPPURTUNITY_PK_HASH"
+src_pk: "OPPORTUNITY_PK_HASH"
 src_hashdiff: 
-  source_column: "OPPURTUNITY_HASHDIFF"
+  source_column: "OPPORTUNITY_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
     - "OPPORTUNITY_ID"
