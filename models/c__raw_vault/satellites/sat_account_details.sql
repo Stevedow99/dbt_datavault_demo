@@ -8,11 +8,15 @@ src_hashdiff:
   source_column: "ACCOUNT_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
-    - "COMPANY_NAME"
-    - "CITY"
-    - "STATE"
-src_eff: "MODIFIEDDATE"
-src_ldts: "DATECREATED"
+    - "TYPE"
+    - "BILLING_STREET"
+    - "BILLING_CITY"
+    - "BILLING_STATE"
+    - "BILLING_POSTAL_CODE"
+    - "BILLING_COUNTRY"
+    - "INDUSTRY"
+src_eff: "MODIFIED_DATETIMESTAMP"
+src_ldts: "CREATED_DATETIMESTAMP"
 src_source: "RECORD_SOURCE"
 {%- endset -%}
 

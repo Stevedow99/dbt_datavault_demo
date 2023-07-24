@@ -8,13 +8,15 @@ src_hashdiff:
   source_column: "OPPURTUNITY_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
+    - "OPPORTUNITY_ID"
+    - "ACCOUNT_ID"
+    - "NAME"
+    - "DESCRIPTION"
+    - "STAGE_NAME"
     - "AMOUNT"
-    - "PROJECT_NAME"
-    - "OPPURTUNITY_NAME"
-    - "STAGE"
-    - "CLOSE_DATE"
-src_eff: "MODIFIEDDATE"
-src_ldts: "DATECREATED"
+    - "PROBABILITY"
+src_eff: "MODIFIED_DATETIMESTAMP"
+src_ldts: "CREATED_DATETIMESTAMP"
 src_source: "RECORD_SOURCE"
 {%- endset -%}
 

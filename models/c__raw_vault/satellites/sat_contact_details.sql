@@ -8,13 +8,12 @@ src_hashdiff:
   source_column: "CONTACT_HASHDIFF"
   alias: "HASHDIFF"
 src_payload:
-    - "CONTACTID"
     - "FIRST_NAME"
     - "LAST_NAME"
     - "EMAIL"
-    - "COUNTRY"
-src_eff: "MODIFIEDDATE"
-src_ldts: "DATECREATED"
+    - "TITLE"
+src_eff: "MODIFIED_DATETIMESTAMP"
+src_ldts: "CREATED_DATETIMESTAMP"
 src_source: "RECORD_SOURCE"
 {%- endset -%}
 
