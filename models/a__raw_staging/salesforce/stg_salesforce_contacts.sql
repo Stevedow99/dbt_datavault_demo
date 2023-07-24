@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        id,
+        id as contact_id,
         is_deleted,
         master_record_id,
         account_id,

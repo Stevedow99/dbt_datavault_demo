@@ -9,15 +9,15 @@ derived_columns:
   START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  OPPURTUNITY_PK_HASH: "ID"
+  OPPURTUNITY_PK_HASH: "OPPORTUNITY_ID"
   ACCOUNT_PK_HASH: "ACCOUNT_ID"
   OPPURTUNITY_ACCOUNT_PK:
-    - "ID"
+    - "OPPORTUNITY_ID"
     - "ACCOUNT_ID"
   OPPURTUNITY_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ID"
+      - "OPPORTUNITY_ID"
       - "ACCOUNT_ID"
       - "NAME"
       - "DESCRIPTION"

@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        id,
+        id as opportunity_id,
         is_deleted,
         account_id,
         is_private,

@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        id,
+        id as lead_id,
         contact_id,
         first_name,
         last_name,

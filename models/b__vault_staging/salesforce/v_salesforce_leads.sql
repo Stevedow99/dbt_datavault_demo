@@ -9,15 +9,15 @@ derived_columns:
   START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  LEAD_PK_HASH: "ID"
+  LEAD_PK_HASH: "LEAD_ID"
   CONTACT_PK_HASH: "CONTACT_ID"
   LEAD_CONTACT_PK:
-    - "ID"
+    - "LEAD_ID"
     - "CONTACT_ID"
   LEAD_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ID"
+      - "LEAD_ID"
       - "CONTACT_ID"
       - "FIRST_NAME"
       - "LAST_NAME"

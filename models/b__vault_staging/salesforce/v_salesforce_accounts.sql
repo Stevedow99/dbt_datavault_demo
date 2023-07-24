@@ -9,11 +9,11 @@ derived_columns:
   START_DATE: "MODIFIED_DATETIMESTAMP"
   END_DATE: "TO_DATE('9999-12-31')"
 hashed_columns:
-  ACCOUNT_PK_HASH: "ID"
+  ACCOUNT_PK_HASH: "ACCOUNT_ID"
   ACCOUNT_HASHDIFF:
     is_hashdiff: true
     columns:
-      - "ID"
+      - "ACCOUNT_ID"
       - "TYPE"
       - "BILLING_STREET"
       - "BILLING_CITY"
