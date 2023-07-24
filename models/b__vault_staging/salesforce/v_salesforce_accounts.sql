@@ -14,6 +14,7 @@ hashed_columns:
     is_hashdiff: true
     columns:
       - "ACCOUNT_ID"
+      - "COMPANY_NAME"
       - "TYPE"
       - "BILLING_STREET"
       - "BILLING_CITY"

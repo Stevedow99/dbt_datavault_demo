@@ -12,7 +12,7 @@ renamed as (
         id as account_id,
         is_deleted,
         master_record_id,
-        name,
+        name as company_name,
         type,
         parent_id,
         billing_street,
