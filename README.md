@@ -1,15 +1,10 @@
-Welcome to your new dbt project!
+# dbt Cloud Data Vault Demo Project
 
-### Using the starter project
+### Project Info
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project shows how you can use [dbt Cloud](https://www.getdbt.com/product-tour/signup/) with [AutomateDV](https://hub.getdbt.com/datavault-uk/automate_dv/latest/) to accelerate building out a data vault paradiam.
 
+<br>
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+This project uses salesforce data as a base for building out the below data vault:
+
