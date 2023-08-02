@@ -1,12 +1,12 @@
 
-{{ config(materialized='pit_incremental', enabled=false) }}
+{{ config(materialized='pit_incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: hub_account
 src_pk: ACCOUNT_PK_HASH
 as_of_dates_table: as_of_date
 satellites: 
-  SAT_ACCOUNT_DETAILS:
+  sat_account_details:
     pk:
       PK: ACCOUNT_PK_HASH
     ldts:
