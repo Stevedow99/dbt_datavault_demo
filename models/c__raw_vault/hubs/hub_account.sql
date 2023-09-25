@@ -1,7 +1,7 @@
 
 {{ config(materialized='incremental') }}
 
-{%- set source_model = ["v_salesforce_accounts"]   -%}
+{%- set source_model = ["v_salesforce_accounts", "v_salesforce_accounts"]   -%}
 
 {%- set src_pk = "ACCOUNT_PK_HASH"                -%}
 {%- set src_nk = "ACCOUNT_ID"                -%}

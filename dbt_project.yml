@@ -38,3 +38,6 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+
+on-run-start: "SELECT 'this is the start of my DV run' "
+on-run-end: "SELECT 'this is the end of my DV run' "
