@@ -27,6 +27,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 
+vars:
+  account_hub_input_model: 'v_salesforce_accounts_one'
+
+
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 

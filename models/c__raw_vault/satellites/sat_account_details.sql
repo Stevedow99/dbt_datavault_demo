@@ -2,7 +2,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "v_salesforce_accounts"
+source_model: "v_salesforce_accounts_one"
 src_pk: "ACCOUNT_PK_HASH"
 src_hashdiff: 
   source_column: "ACCOUNT_HASHDIFF"

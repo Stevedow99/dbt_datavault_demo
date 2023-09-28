@@ -1,7 +1,9 @@
+-- depends on : {{ ref('v_salesforce_accounts_one') }}, {{ ref('v_salesforce_accounts_two') }}, {{ ref('v_salesforce_accounts_three') }}, {{ref('v_salesforce_accounts_four')}}
+
 
 {{ config(materialized='incremental') }}
 
-{%- set source_model = ["v_salesforce_accounts"]   -%}
+{%- set source_model = var('account_hub_input_model')   -%}
 
 {%- set src_pk = "ACCOUNT_PK_HASH"                -%}
 {%- set src_nk = "ACCOUNT_ID"                -%}
