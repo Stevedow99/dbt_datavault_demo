@@ -36,8 +36,26 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
+<<<<<<< HEAD
     example:
       materialized: view
 
 on-run-start: "SELECT 'this is the start of my DV run' "
 on-run-end: "SELECT 'this is the end of my DV run' "
+=======
+    a__raw_staging:
+      +tags: 'raw_staging'
+    b__vault_staging:
+      +tags: 'vault_staging'
+    c__raw_vault:
+      hubs:
+        +tags: 'hub'
+      links:
+        +tags: 'link'
+      satellites:
+        +tags: 'satellite'
+    d__business_vault:
+      +tags: 'business_vault'
+
+
+>>>>>>> 347ff5d2c9b816234ca129a02099720998cd6b07
